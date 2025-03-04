@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHATDOGAREYOU?</title>
+    <style>
+
+        /* STYLE FOR THE INPUT FIELD */
+        #charInput {
+            margin-left: 65px;
+        }
+
+        /* STYLE FOR THE SUBMIT BUTTON */
+        #submitButton {
+            background-color: rgb(255, 0, 93);
+            color: white;
+        }
+
+        #submitButton :hover {
+            background-color: white;
+            color: rgb(255, 0, 93);
+        }
+
+
+        /* STYLE FOR THE IMAGE */
+        #displayedImage {
+            display: none; /* This line is mandatory */
+            max-width: 350px;
+            margin-top: 20px;
+            min-width: 350px;
+            z-index: 6;
+        }
+
+        body{
+            background-color: rgb(255, 0, 93);
+        }
+
+        h1, h2 {
+            color: rgb(255, 0, 93);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+
+.dogtype{
+    position: relative;
+    width: 200px;
+    margin-left: 80px;
+    height: auto;
+    margin-top: 100px;
+    z-index: 4;
+}
+
+        h1{
+            font-size: 45pt;
+            text-align: center;
+            line-height: 50px;
+        }
+
+
+        .what{
+    position: relative;
+    padding-top: 5px;
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 300px;
+    height: 60px;
+    animation: scaling 3s infinite ease-in-out;
+    z-index: 3;
+        }
+        
+
+        .line1{
+            position: relative;
+    margin-left: 57px;
+    margin-top: -10px;
+    width: 230px;
+    text-align: center;
+        }
+
+        .container{
+            position: relative;
+            background-color: rgb(255, 255, 255);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 350px;
+        height: 700px;
+        z-index: 1;
+        }
+
+        @keyframes scaling {
+    0% {transform: scale(1) translateY(-10px);}
+    50% {transform: scale(1.2) translateY(-20px);}
+    100% {transform: scale(1) translateY(-10px);}
+}
+
+.frame1{
+    position: absolute;
+    scale: .6;
+    margin-top: -230px;
+    margin-left: -350px;
+    z-index: 2;
+    animation: frame1s 1s steps(1) infinite;
+}
+.frame2{
+    position: absolute;
+    scale: .6;
+    margin-top: -220px;
+    margin-left: -350px;
+    z-index: 2;
+    animation: frame2s 1s steps(1) infinite;
+}
+
+@keyframes frame1s {
+    0% {
+      transform: scale(0); 
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+@keyframes frame2s {
+    0% {
+      transform: scale(1); 
+    }
+    50% {
+        transform: scale(0);
+    }
+}
+
+.question{
+    text-align: center;
+    background-color: yellow;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 25px;
+    color: rgb(255, 0, 93);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    z-index: -1;
+}
+
+
+
+
+@media screen and (min-width: 1050px) {
+    .container {
+   width: 1000px;
+margin-top: 20px;
+    }
+
+    .what {
+        --left: 155px;
+        --top: 125px;
+        scale: 1.1;
+    }
+
+    .frame1, .frame2 {
+        --left: 50px;
+        --top: -30px;
+        scale: 1;
+    }
+
+    .dogtype {
+        --left: 150px;
+        --top: 330px;
+        min-height: 260px;
+        width: 300px;
+    }
+
+    .line1 {
+        --left: 585px;
+        --top: 150px;
+        scale: 1.3;
+    }
+    
+    .question {
+        --left: 550px;
+        --top: 360px;
+        scale: 1.3;
+    }
+    #displayedImage {
+        --left: 505px;
+        --top: 330px;
+        max-width: 390px;
+    }
+
+    #charInput {
+        --left: 585px;
+        --top: 270px;
+        scale: 1.3;
+    }
+
+    #submitButton {
+        --left: 770px;
+        --top: 270px;
+        scale: 1.3;
+    }
+
+    .line1, .dogtype, .question, .what, .frame1, .frame2, #submitButton, #charInput, #displayedImage {
+        position: absolute;
+        margin-left: var(--left);
+        margin-top: var(--top);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <div class="container">
+
+
+
+    <div class="what"><h1>WHAT DOG ARE YOU?</h1></div>
+
+    <img class="dogtype" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXBodnYzdWZ5aHh2bjQ0cWJuMTdxeWt5anB5a215ZjJva3p0NnNwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5SKwQMGTR1umLrKC7N/giphy.gif">
+
+    <img class="frame1" src="images/frame1.png">
+    <img class="frame2" src="images/frame2.png">
+
+    <div class="question">
+        <p>???</p>
+    </div>
+
+    <div class="line1"><h2>enter the first letter of your name to find out!</h2></div>
+    
+    
+    <!-- INPUT FIELD FOR 1 CHARACTER -->
+    <input type="text" id="charInput" maxlength="1">
+
+    <!-- BUTTON TO DISPLAY IMAGE -->
+    <button onclick="displayImage()" id="submitButton">ENTER</button>
+
+    <!-- IMAGE TO DISPLAY -->
+    <img id="displayedImage" src="" alt="Displayed Image">
+
+
+    <!-- Image Display Script Below -->
+    <script>
+        // Array of images
+        // DIRECTIONS: UPDATE THE URLS WITH THE RELATIVE LINKS OF YOUR IMAGES
+        const images = [
+            "https://www.akc.org/wp-content/uploads/2017/11/Dalmatian-On-White-01.jpg", //A
+
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2021/01/18151501/Alaskan-Klee-Kai-standing-in-the-snow-attached-to-a-harness1.jpg", //B
+
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/06154034/Akita-standing-outdoors-in-the-summer.jpg", //C
+
+            "https://www.akc.org/wp-content/uploads/2020/01/American-Bulldog-standing-in-three-quarter-view.jpg", //D
+
+            "https://www.akc.org/wp-content/uploads/2017/11/American-Hairless-Terrier-standing-in-the-grass-on-lead.jpg", //E
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Rat-Terrier-On-White-01.jpg", //F
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Pomeranian-On-White-01.jpg", //G
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Pembroke-Welsh-Corgi-standing-outdoors-in-the-fall.jpg", //H
+
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/05133942/Pekingese_standing_portrait.jpg", //I
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Leonberger-standing-in-a-field.jpg", //J
+
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2023/08/13114901/Large-Munsterlander-standing-outdoors.jpg", //K
+
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/08153734/Transylvanian-Hound-On-White-01.jpg", //L
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Tornjak-standing-in-the-woods.jpg", //M
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Tibetan-Spaniel-laying-down-outdoors.jpg", //N
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Shetland-Sheepdog-On-White-01.jpg", //O
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Shiba-Inu-standing-in-profile-outdoors.jpg", //P
+
+            "https://www.akc.org/wp-content/uploads/2017/11/AKC-121716-139.jpg", //Q
+
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2022/11/02145728/Schipperke-standing-in-a-field.jpg", //R
+
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/08153503/Scottish-Terrier-On-White-02.jpg", //S
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Shih-Tzu-On-White-01.jpg", //T
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Saint-Bernard-standing-in-profile-outdoors.jpg", //U
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Samoyed-standing-in-the-forest.jpg", //V
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Polish-Lowland-Sheepdog-On-White-02.jpg", //W
+
+            "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2023/07/06121820/Pont-Audemer-Spaniel-on-point-outdoors-while-hunting.1.jpg", //X
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Portuguese-Podengo-standing-in-three-quarter-view.jpg", //Y
+
+            "https://www.akc.org/wp-content/uploads/2017/11/Poodle-On-White-01.jpg"  //Z
+
+        ];
+
+        function displayImage() {
+            const input = document.getElementById("charInput").value.toUpperCase();
+            const imgElement = document.getElementById("displayedImage");
+            
+            // Assign an image based on character (A-Z)
+            const index = input.charCodeAt(0) - 65; // 'A' is 65 in ASCII
+            if (index >= 0 && index < images.length) {
+                imgElement.src = images[index];
+                imgElement.style.display = "block";
+            } else {
+                /* 
+                alert("Please enter a letter between A and Z.");
+                imgElement.style.display = "none";
+                */
+
+                // IF INVALID INPUT IS ENTERED, DISPLAY ALTERNATE IMAGE
+                imgElement.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGxueHJxNHM4azljZnQ1NWhmeTVkc243bHZ1aWI3ZTl5aDFqMGFlbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nZ9OnDVJoEaLPlVRc1/giphy.gif"
+                imgElement.style.display = "block";
+            }
+        }
+    </script>
+
+</div>
+
+</body>
+</html>
